@@ -1,5 +1,11 @@
 export type Message = {
   id: number;
   userId: number;
-  body: String;
+  body: string;
+};
+
+export type SendMessage = {
+  roomId: number;
+  userId: number;
+  body: string;
 };
