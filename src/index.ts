@@ -23,6 +23,11 @@ app.get("/rooms", (_, res) => {
   res.send(rooms);
 });
 
+app.get("/room/:id", (req, res) => {
+  const room = rooms.find((room) => `${room.id}` === req.params.id) ?? rooms[0];
+  res.send(room);
+});
+
 io.on("connection", (socket) => {
   console.log("connected");
 });
